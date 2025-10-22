@@ -1,0 +1,22 @@
+<h1>You are successfully logged in</h1>
+<a href="{% url 'add' %}">Add New</a>
+<a href="{% url 'logout' %}">logout</a>
+
+<table border="1px">
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>place</th>
+        <th>action</th>
+    </tr>
+    <tr>
+        {% for datas in data %}
+        <th>{{datas.name}}</th>
+        <th>{{datas.age}}</th>
+        <th>{{datas.place}}</th>
+        <th><a href="{% url 'edit' datas.id %}">Edit</a></th>
+        <th><a href="{% url 'delete' datas.id  %}">delete</a></th>
+        {% endfor %}
+    </tr>
+    
+</table>

@@ -1,0 +1,11 @@
+<h1>SIGNUP FORM</h1>
+<form method="post">
+    {% csrf_token %}
+    name:<input type="text" name="name"><br>
+    username:<input type="username" name="username"><br>
+    password:<input type="password" name="password"><br>
+    <input type="submit" value="signup ">
+    {% if error %}
+    {{error}}
+    {% endif %}
+</form>
